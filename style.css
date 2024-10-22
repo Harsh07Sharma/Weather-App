@@ -5,10 +5,11 @@
 }
 
 body {
-  font-family: "montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-image: url("https://images.unsplash.com/photo-1514632595-4944383f2737?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHdlYXRoZXIlMjBhcHB8ZW58MHx8MHx8fDA%3D");
   background-size: cover;
   background-position: top center;
+  color: #fff;
 }
 
 .app-wrap {
@@ -17,40 +18,54 @@ body {
   min-height: 100vh;
   background-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.3)
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.6)
   );
+  padding: 20px;
 }
 
 header {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  padding: 50px 15px 15px;
+  padding: 30px 15px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #ffcc00; 
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 header input {
   width: 100%;
-  max-width: 280px;
-  padding: 10px 15px;
-  border: 3px solid black;
+  max-width: 350px;
+  padding: 12px 15px;
+  border: none;
   outline: none;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 1.625rem;
-  color: #313131;
-  font-size: 20px;
-  font-weight: 300;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  transition: 0.2s ease-out;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+header input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 header input:focus {
-  background-color: rgba(255, 255, 255, 0.719);
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
 main {
-  flex: 1 1 100%;
-  padding: 25px 25px 50px;
+  flex: 1;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,45 +73,101 @@ main {
 }
 
 .location .city {
-  color: #fff;
-  font-size: 32px;
-  font-weight: 500;
+  font-size: 40px;
+  font-weight: 700;
   margin-bottom: 5px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #008080; 
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
 .location .date {
-  color: #fff;
-  font-size: 16px;
-  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .current .temp {
-  color: #fff;
-  font-size: 109px;
+  font-size: 120px;
   font-weight: 900;
-  margin: 30px 0px;
-  text-shadow: 2px 10px rgba(0, 0, 0, 0.6);
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin: 20px 0;
+  text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.6);
+  color: #008080; 
 }
 
 .current .temp span {
-  font-weight: 500;
+  font-size: 40px;
+  font-weight: 400;
+  color: #fff; 
 }
 
 .current .weather {
-  color: #fff;
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 600;
   font-style: italic;
   margin-bottom: 15px;
-  text-shadow: 0px 3px rgba(0, 0, 0, 0.4);
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #87cefa; 
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .current .hi-low {
-  color: #fff;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 500;
-  text-shadow: 0px 4px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #b0e0e6; 
+}
+
+footer {
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 30px;
+  }
+
+  header input {
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  .location .city {
+    font-size: 32px;
+  }
+
+  .current .temp {
+    font-size: 80px;
+  }
+
+  .current .weather {
+    font-size: 28px;
+  }
+
+  .current .hi-low {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 28px;
+  }
+
+  .location .city {
+    font-size: 28px;
+  }
+
+  .current .temp {
+    font-size: 64px;
+  }
+
+  .current .weather {
+    font-size: 24px;
+  }
+
+  .current .hi-low {
+    font-size: 20px;
+  }
 }
